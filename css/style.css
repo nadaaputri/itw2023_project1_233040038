@@ -79,6 +79,93 @@ body {
 #hamburger-menu {
   display: none;
 }
+
+/* Navbar search form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 35rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #010101;
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: #010101;
+}
+
+/* Shopping Bag */
+.shopping-bag {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  color: #010101;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.shopping-bag.active {
+  right: 0;
+}
+
+.shopping-bag .bag-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #666;
+  position: relative;
+}
+
+.shopping-bag img {
+  height: 7rem;
+  border-radius: 50%;
+}
+
+.shopping-bag h4 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-bag .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-bag .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-bag .remove-item:hover {
+  color: var(--primary);
+}
+
+/* Akhir shopping bag */
 /* Akhir navbar */
 
 /* Hero section */
@@ -124,8 +211,8 @@ body {
   margin-top: 1rem;
   line-height: 1.4;
   font-weight: 300;
+  color: #e1dddd;
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-  mix-blend-mode: difference;
 }
 
 .hero .content .cta {
@@ -233,36 +320,57 @@ body {
 /* Akhir Menu */
 
 /* Varians */
-.varians h2 {
-  display: flex;
-  text-align: center;
-  justify-content: center;
+.varians .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
 }
 
-.varian-rasa {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  justify-items: center;
+.varians .varian-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.varians .varian-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.varians .varian-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.varian {
-  background-color: white;
-  color: black;
-  padding: 5px;
-  text-align: center;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+.varians .varian-icons a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
-.varian .icon img {
-  width: 200px;
+.varians .varian-image {
+  padding: 1rem 0;
 }
 
-.varian h3 {
-  font-size: 2em;
+.varians .varian-image img {
+  height: 15rem;
+}
+
+.varians .varian-content h4 {
+  font-size: 1.5rem;
+}
+
+.varians .varian-price {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 /* Akhir Varian */
@@ -355,6 +463,79 @@ footer .credit a {
 }
 /* Akhir Footer */
 
+/* Modal Box Item */
+/* Item detail */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: #010101;
+  margin: 15% auto;
+  padding: 1.2rem;
+  bottom: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+
+/* Modal animation */
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  height: 12rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-content p {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal-content h4 {
+  font-size: 1.5rem;
+}
+
+.modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
 /* Media Queries */
 
 /* Laptop */
@@ -404,6 +585,11 @@ footer .credit a {
     transform: scaleX(0.3);
   }
 
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
   .about .row {
     flex-wrap: wrap;
   }
@@ -441,6 +627,10 @@ footer .credit a {
 
   .contact .row form {
     padding-top: 0;
+  }
+
+  .modal-content {
+    flex-wrap: wrap;
   }
 }
 

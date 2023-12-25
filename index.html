@@ -18,6 +18,9 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Navbar -->
@@ -33,10 +36,46 @@
       </div>
 
       <div class="navbar-extra">
-        <a href="#" id="search"> <i data-feather="search"></i></a>
-        <a href="#" id="shopping-bag"> <i data-feather="shopping-bag"></i></a>
+        <a href="#" id="search-button"> <i data-feather="search"></i></a>
+        <a href="#" id="shopping-bag-button"> <i data-feather="shopping-bag"></i></a>
         <a href="#" id="hamburger-menu"> <i data-feather="menu"></i></a>
       </div>
+
+      <!-- Search Form -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+      <!-- Akhir Search Form -->
+
+      <!-- Shopping Bag -->
+      <div class="shopping-bag">
+        <div class="bag-item">
+          <img src="img/menu/roti-mini.jpg" alt="" />
+          <div class="item-detail">
+            <h4>Roti mini</h4>
+            <div class="item-price">IDR 12K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="bag-item">
+          <img src="img/menu/roti-kopi.jpg" alt="" />
+          <div class="item-detail">
+            <h4>Roti Kopi</h4>
+            <div class="item-price">IDR 5K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="bag-item">
+          <img src="img/menu/es-teler.jpg" alt="" />
+          <div class="item-detail">
+            <h4>Es Teler</h4>
+            <div class="item-price">IDR 10K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+      </div>
+      <!-- Akhir Shopping Bag -->
     </nav>
     <!-- Akhir navbar -->
 
@@ -52,16 +91,20 @@
 
     <!-- About -->
     <section id="about" class="about">
-      <h2><span>Tentang</span> Kami</h2>
+      <h2 data-aos="zoom-in-down"><span>Tentang</span> Kami</h2>
 
       <div class="row">
         <div class="about-img">
-          <img src="img/kopi2.jpg" alt="Tentang Kami" />
+          <img src="img/kopi2.jpg" alt="Tentang Kami" data-aos="fade-in" />
         </div>
         <div class="content">
-          <h3>Kenapa memilih roti kami?</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum suscipit error ea exercitationem, quidem nihil.</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio laboriosam quam eum perferendis dolor ullam vitae tenetur pariatur non vero.</p>
+          <h3 data-aos="fade-down-right">NED Food</h3>
+          <p data-aos="fade-down-right">NED Food menyediakan berbagai makanan dan minuman yang kekinian dan disukai oleh semua orang.</p>
+          <p data-aos="fade-down-right">
+            Bahan premium yang digunakan merupakan sesuatu yang bisa meningkatkan kualitas baik tekstur maupun rasa yang tidak kalah dengan produk-produk yang lain, bahkan dijamin memiliki keunggulan tersendiri. Walaupun memiliki
+            keunggulan, tetapi harga tetap terjangkau untuk semua kalangan.
+          </p>
+          <p data-aos="fade-down-right">NED food tidak pernah memberikan janji, tetapi silahkan pesan dan rasakan untuk membuktikan keunggulan dari produk NED food. Ungkapan mengatakan "belum keren kalau belum ke NED Food."</p>
         </div>
       </div>
     </section>
@@ -69,8 +112,8 @@
 
     <!-- Menu -->
     <section id="menu" class="menu">
-      <h2><span>Menu</span> Kami</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sit animi veniam distinctio voluptatibus dolore?</p>
+      <h2 data-aos="zoom-in-down"><span>Menu</span> Kami</h2>
+      <p data-aos="fade-in">NED Food tidak hanya menyediakan berbagai macam makanan, tetapi tersedia juga minuman dengan harga yang terjangkau.</p>
       <div class="row">
         <div class="menu-card">
           <img src="img/menu/roti-mini.jpg" alt="Roti Mini " class="menu-card-image" />
@@ -123,130 +166,251 @@
 
     <!-- Varian -->
     <section class="varians" id="varian">
-      <h2><span>Varian </span> Rasa</h2>
-      <div class="varian-rasa">
-        <div class="varian">
-          <div class="icon">
+      <h2 data-aos="zoom-in-down"><span>Varian</span> Rasa</h2>
+
+      <div class="row">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/abon.jpg" alt="" />
           </div>
-          <h4>Abon</h4>
+          <div class="varian-content">
+            <h4>Abon</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/ceres.jpg" alt="" />
           </div>
-          <h4>Ceres</h4>
+          <div class="varian-content">
+            <h4>Ceres</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/coklat-kacang.jpg" alt="" />
           </div>
-          <h4>Coklat Kacang</h4>
+          <div class="varian-content">
+            <h4>Coklat Kacang</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/coklat.jpg" alt="" />
           </div>
-          <h4>Coklat</h4>
+          <div class="varian-content">
+            <h4>Coklat</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/greentea.jpg" alt="" />
           </div>
-          <h4>Greentea</h4>
+          <div class="varian-content">
+            <h4>Greentea</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/kacang.jpg" alt="" />
           </div>
-          <h4>Kacang</h4>
+          <div class="varian-content">
+            <h4>Kacang</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/keju-isi.jpg" alt="" />
           </div>
-          <h4>Keju Isi</h4>
+          <div class="varian-content">
+            <h4>Keju Isi</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/keju.jpg" alt="" />
           </div>
-          <h4>Keju</h4>
+          <div class="varian-content">
+            <h4>Keju</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/koko-krunch.jpg" alt="" />
           </div>
-          <h4>Koko Krunch</h4>
-        </div>
-        <div class="varian">
-          <div class="icon">
-            <img src="img/varian/marshmallow.jpg" alt="" />
+          <div class="varian-content">
+            <h4>Koko Krunch</h4>
           </div>
-          <h4>Marshmallow</h4>
         </div>
-        <div class="varian">
-          <div class="icon">
-            <img src="img/varian/milo.jpg" alt="" />
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
           </div>
-          <h4>Milo</h4>
-        </div>
-        <div class="varian">
-          <div class="icon">
-            <img src="img/varian/oreo.jpg" alt="" />
-          </div>
-          <h4>Oreo</h4>
-        </div>
-        <div class="varian">
-          <div class="icon">
-            <img src="img/varian/pisang.jpg" alt="" />
-          </div>
-          <h4>Pisang</h4>
-        </div>
-        <div class="varian">
-          <div class="icon">
-            <img src="img/varian/piscok.jpg" alt="" />
-          </div>
-          <h4>Pisang Coklat</h4>
-        </div>
-        <div class="varian">
-          <div class="icon">
-            <img src="img/varian/pizza.jpg" alt="" />
-          </div>
-          <h4>Pizza</h4>
-        </div>
-        <div class="varian">
-          <div class="icon">
-            <img src="img/varian/sosis-keju.jpg" alt="" />
-          </div>
-          <h4>Sosis Keju</h4>
-        </div>
-        <div class="varian">
-          <div class="icon">
+          <div class="varian-image">
             <img src="img/varian/kopi.jpg" alt="" />
           </div>
-          <h4>Kopi</h4>
+          <div class="varian-content">
+            <h4>Kopi</h4>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
+            <img src="img/varian/marshmallow.jpg" alt="" />
+          </div>
+          <div class="varian-content">
+            <h4>Marshmallow</h4>
+          </div>
+        </div>
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
+            <img src="img/varian/milo.jpg" alt="" />
+          </div>
+          <div class="varian-content">
+            <h4>Milo</h4>
+          </div>
+        </div>
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
+            <img src="img/varian/oreo.jpg" alt="" />
+          </div>
+          <div class="varian-content">
+            <h4>Oreo</h4>
+          </div>
+        </div>
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
+            <img src="img/varian/pisang.jpg" alt="" />
+          </div>
+          <div class="varian-content">
+            <h4>Pisang</h4>
+          </div>
+        </div>
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
+            <img src="img/varian/piscok.jpg" alt="" />
+          </div>
+          <div class="varian-content">
+            <h4>Pisang Coklat</h4>
+          </div>
+        </div>
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
+            <img src="img/varian/pizza.jpg" alt="" />
+          </div>
+          <div class="varian-content">
+            <h4>Pizza</h4>
+          </div>
+        </div>
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
+            <img src="img/varian/sosis-keju.jpg" alt="" />
+          </div>
+          <div class="varian-content">
+            <h4>Sosis Keju</h4>
+          </div>
+        </div>
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/kuker-coklat1.jpg" alt="" />
           </div>
-          <h4>Kuker Coklat 200gr</h4>
-          <p>IDR 30K</p>
+          <div class="varian-content">
+            <h4>Kuker Coklat 200gr</h4>
+            <div class="varian-price">IDR 30K</div>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/kuker-coklat1.jpg" alt="" />
           </div>
-          <h4>Kuker Coklat 350gr</h4>
-          <p>IDR 50K</p>
+          <div class="varian-content">
+            <h4>Kuker Coklat 350gr</h4>
+            <div class="varian-price">IDR 50K</div>
+          </div>
         </div>
-        <div class="varian">
-          <div class="icon">
+        <div class="varian-card">
+          <div class="varian-icons">
+            <a href=""><i data-feather="shopping-bag"></i></a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="varian-image">
             <img src="img/varian/kuker-coklat2.jpg" alt="" />
           </div>
-          <h4>Kuker Coklat 500gr</h4>
-          <p>IDR 75K</p>
+          <div class="varian-content">
+            <h4>Kuker Coklat 500gr</h4>
+            <div class="varian-price">IDR 75K</div>
+          </div>
         </div>
       </div>
     </section>
@@ -254,7 +418,7 @@
 
     <!-- Contact -->
     <section class="contact" id="contact">
-      <h2><span>Kontak</span> Kami</h2>
+      <h2 data-aos="fade-in"><span>Kontak</span> Kami</h2>
       <div class="row">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65051.66267355628!2d107.50740327537906!3d-6.841338920403779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e378e56266f7%3A0x401e8f1fc28c560!2sNgamprah%2C%20Kec.%20Ngamprah%2C%20Kabupaten%20Bandung%20Barat%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1702902941927!5m2!1sid!2sid"
@@ -286,7 +450,7 @@
     <!-- Footer -->
     <footer>
       <div class="social">
-        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="https://www.instagram.com/roti_kd_anekarasa/"><i data-feather="instagram"></i></a>
         <a href="#"><i data-feather="phone-call"></i></a>
       </div>
 
@@ -294,14 +458,35 @@
         <a href="#home">Home</a>
         <a href="#about">Tentang Kami</a>
         <a href="#menu">Menu</a>
+        <a href="#varian">Varian</a>
         <a href="#contact">Kontak</a>
       </div>
 
       <div class="credit">
-        <p>Created by <a href="#">NadaaPutri</a>. | &copy; 2023.</p>
+        <p>Created by <a href="https://www.instagram.com/nadaaptri_/">NadaaPutri</a>. | &copy; 2023.</p>
       </div>
     </footer>
     <!-- Akhir Footer -->
+
+    <!-- Modal Box Item -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <img src="img/menu/roti-mini.jpg" alt="" />
+          <div class="varian-content">
+            <h4>Roti mini</h4>
+            <p>
+              Roti mini merupakan menu paling best seller di NED Food. <br />
+              1 box roti mini berisi 12pcs roti beraneka rasa.
+            </p>
+            <div class="varian-price">IDR 12K</div>
+            <a href="#"><i data-feather="shopping-bag"></i><span>add to cart</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Modal Box Item -->
 
     <!-- Feather icons -->
     <script>
@@ -310,5 +495,16 @@
 
     <!-- My Javascript -->
     <script src="js/script.js"></script>
+
+    <!-- Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // const menu = document.querySelector(".menu-card");
+      // menu.forEach((img, i) => {
+      //   img.dataset.aos = "fade-in";
+      // });
+
+      AOS.init();
+    </script>
   </body>
 </html>
