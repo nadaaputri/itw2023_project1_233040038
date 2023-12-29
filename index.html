@@ -36,6 +36,7 @@
       </div>
 
       <div class="navbar-extra">
+        <img src="img/light-mode.png" id="icon" />
         <a href="#" id="search-button"> <i data-feather="search"></i></a>
         <a href="#" id="shopping-bag-button"> <i data-feather="shopping-bag"></i></a>
         <a href="#" id="hamburger-menu"> <i data-feather="menu"></i></a>
@@ -428,21 +429,32 @@
           class="map"
         ></iframe>
 
-        <form action="">
+        <form action="" name="Contact-Form-NED-Food">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="nama" />
+            <input type="text" placeholder="nama" name="nama" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="text" placeholder="email" />
+            <input type="text" placeholder="email" name="email" />
           </div>
           <div class="input-group">
             <i data-feather="phone"></i>
-            <input type="text" placeholder="no hp" />
+            <input type="text" placeholder="no hp" name="no-hp" />
           </div>
-          <button type="submit" class="btn">Kirim</button>
+          <div class="input-group">
+            <i data-feather="message-square"></i>
+            <input type="text" placeholder="pesan" name="pesan" />
+          </div>
+          <button type="submit" class="btn btn-kirim">Kirim</button>
+          <button type="button" class="btn btn-loading d-none">Loading...</button>
         </form>
+      </div>
+      <div class="alert d-none" role="alert">
+        <div class="col">
+          Terimakasih! Pesan anda <strong>sudah terkirim.</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
       </div>
     </section>
     <!-- Akhir Contact -->
@@ -480,7 +492,7 @@
               Roti mini merupakan menu paling best seller di NED Food. <br />
               1 box roti mini berisi 12pcs roti beraneka rasa.
             </p>
-            <div class="varian-price">IDR 12K</div>
+            <div class="varian-price">IDR 16K</div>
             <a href="#"><i data-feather="shopping-bag"></i><span>add to cart</span></a>
           </div>
         </div>
@@ -499,10 +511,19 @@
     <!-- Script AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      // const menu = document.querySelector(".menu-card");
-      // menu.forEach((img, i) => {
-      //   img.dataset.aos = "fade-in";
-      // });
+      const menu = document.querySelectorAll(".menu-card");
+      const varian = document.querySelectorAll(".varian-card");
+      menu.forEach((img, i) => {
+        img.dataset.aos = "fade-in";
+        img.dataset.aosDelay = i * 80;
+        img.dataset.aosDuration = 1000;
+      });
+
+      varian.forEach((img, i) => {
+        img.dataset.aos = "zoom-in";
+        img.dataset.aosDelay = i * 30;
+        img.dataset.aosDuration = 1000;
+      });
 
       AOS.init();
     </script>

@@ -2,6 +2,10 @@
   --primary: #a37649;
   --food: #c4803d;
   --bg: #e1dcdc;
+  --background: #181818;
+  --color: #ffff;
+  --font: #010101;
+  --contact: #222;
 }
 
 * {
@@ -19,8 +23,8 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(24, 24, 24);
-  color: white;
+  background-color: var(--background);
+  color: var(--color);
 }
 
 /* Navbar */
@@ -76,6 +80,17 @@ body {
   color: var(--primary);
 }
 
+#icon {
+  width: 30px;
+  cursor: pointer;
+}
+
+.light-theme {
+  --background: #f3f3f3;
+  --color: #292828;
+  --contact: #dcd7d7;
+}
+
 #hamburger-menu {
   display: none;
 }
@@ -86,6 +101,7 @@ body {
   top: 100%;
   right: 7%;
   background-color: #fff;
+  border-bottom: #010101;
   width: 35rem;
   height: 4rem;
   display: flex;
@@ -122,8 +138,8 @@ body {
   height: 100vh;
   width: 35rem;
   padding: 0 1.5rem;
-  color: #010101;
-  background-color: #fff;
+  color: var(--color);
+  background-color: var(--background);
   transition: 0.3s;
 }
 
@@ -277,7 +293,7 @@ body {
 .about .row .content p {
   margin-bottom: 0.8rem;
   font-size: 1.4rem;
-  font-weight: 250;
+  font-weight: 350;
   line-height: 1.6;
 }
 /* Akhir About */
@@ -342,7 +358,7 @@ body {
 .varians .varian-icons a {
   width: 4rem;
   height: 4rem;
-  color: #fff;
+  color: var(--color);
   margin: 0.3rem;
   border: 1px solid #666;
   border-radius: 5%;
@@ -379,7 +395,7 @@ body {
 .contact .row {
   display: flex;
   margin-top: 2rem;
-  background: #222;
+  background: var(--contact);
 }
 
 .contact .row .map {
@@ -399,7 +415,7 @@ body {
   align-items: center;
   margin-top: 2rem;
   background-color: #959191;
-  border: 1px solid #fff;
+  border: 1px solid var(--color);
   padding: 0;
 }
 
@@ -408,7 +424,7 @@ body {
   padding: 0.8rem;
   font-size: 1.7rem;
   background: none;
-  color: #fff;
+  color: var(--color);
 }
 
 .contact .row form .btn {
@@ -416,10 +432,31 @@ body {
   display: inline-block;
   padding: 1rem 2rem;
   font-size: 1.7rem;
-  color: #fff;
+  color: var(--color);
   background-color: var(--primary);
   cursor: pointer;
 }
+
+.contact .row form .btn.btn-loading.d-none {
+  display: none;
+}
+.contact .row form .btn.btn-kirim.d-none {
+  display: none;
+}
+
+.alert {
+  margin-top: 3rem;
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: #222;
+  background-color: #66c366;
+  justify-content: center;
+}
+
+.alert.d-none {
+  display: none;
+}
+
 /* Akhir Contact */
 
 /* Footer */
@@ -435,7 +472,7 @@ footer .social {
 }
 
 footer .social a {
-  color: #fff;
+  color: var(--color);
   margin: 1rem;
 }
 
@@ -449,7 +486,7 @@ footer .links {
 }
 
 footer .links a {
-  color: #fff;
+  color: var(--color);
   padding: 0.7rem 1rem;
 }
 
@@ -458,7 +495,7 @@ footer .credit {
 }
 
 footer .credit a {
-  color: var(--bg);
+  color: var(--color);
   font-weight: 500;
 }
 /* Akhir Footer */
@@ -479,8 +516,8 @@ footer .credit a {
 
 .modal-container {
   position: relative;
-  background-color: #fefefe;
-  color: #010101;
+  background-color: var(--background);
+  color: var(--color);
   margin: 15% auto;
   padding: 1.2rem;
   bottom: 1px solid #666;
@@ -503,6 +540,7 @@ footer .credit a {
 .modal-container .close-icon {
   position: absolute;
   right: 1rem;
+  color: var(--color);
 }
 
 .modal-content {
@@ -531,7 +569,7 @@ footer .credit a {
   gap: 1rem;
   width: 12rem;
   background-color: var(--primary);
-  color: #fff;
+  color: var(--color);
   margin-top: 1rem;
   padding: 1rem 1.6rem;
 }

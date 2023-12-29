@@ -65,3 +65,42 @@ window.onclick = (e) => {
     itemDetailModal.style.display = "none";
   }
 };
+
+// Light mode
+var icon = document.getElementById("icon");
+icon.onclick = function () {
+  document.body.classList.toggle("light-theme");
+  if (document.body.classList.contains("light-theme")) {
+    icon.src = "../img/dark-mode.png";
+  } else {
+    icon.src = "../img/light-mode.png";
+  }
+};
+
+// Script Form
+const scriptURL = "https://script.google.com/macros/s/AKfycbwrXlFUsPmA6lJ1AgJ_sg18sEwp4KWjfq7wk8dK_GS91B9kLTGZCzIphdi7Sz2WM4Xobg/exec";
+const form = document.forms["Contact-Form-NED-Food"];
+const btnKirim = document.querySelector(".btn-kirim");
+const btnLoading = document.querySelector(".btn-loading");
+const alert = document.querySelector(".alert");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // Ketika tombol submit diklik
+  // Tampilkan tombol loading, hilangkan tombol kirim
+  btnLoading.classList.toggle("d-none");
+  btnKirim.classList.toggle("d-none");
+
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => {
+      // Tampilkan tombol kirim, hilangkan tombol loading
+      btnLoading.classList.toggle("d-none");
+      btnKirim.classList.toggle("d-none");
+      // Tampilkan alert
+      alert.classList.toggle("d-none");
+      // Reset form
+      form.reset();
+      console.log("Success!", response);
+    })
+    .catch((error) => console.error("Error!", error.message));
+});
