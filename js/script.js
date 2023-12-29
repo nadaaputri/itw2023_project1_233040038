@@ -66,17 +66,6 @@ window.onclick = (e) => {
   }
 };
 
-// Light mode
-var icon = document.getElementById("icon");
-icon.onclick = function () {
-  document.body.classList.toggle("light-theme");
-  if (document.body.classList.contains("light-theme")) {
-    icon.src = "../img/dark-mode.png";
-  } else {
-    icon.src = "../img/light-mode.png";
-  }
-};
-
 // Script Form
 const scriptURL = "https://script.google.com/macros/s/AKfycbwrXlFUsPmA6lJ1AgJ_sg18sEwp4KWjfq7wk8dK_GS91B9kLTGZCzIphdi7Sz2WM4Xobg/exec";
 const form = document.forms["Contact-Form-NED-Food"];
