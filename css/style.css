@@ -667,6 +667,10 @@ footer .credit a {
     padding-top: 0;
   }
 
+  .modal-container {
+    margin-top: 200px;
+    height: 60%;
+  }
   .modal-content {
     flex-wrap: wrap;
   }
