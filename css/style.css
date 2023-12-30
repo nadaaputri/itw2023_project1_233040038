@@ -6,6 +6,8 @@
   --color: #ffff;
   --font: #010101;
   --contact: #222;
+  --hero: rgba(24, 24, 24, 1);
+  --hero-gradient: rgba(225, 225, 225, 0);
 }
 
 * {
@@ -89,6 +91,8 @@ body {
   --background: #f3f3f3;
   --color: #292828;
   --contact: #dcd7d7;
+  --hero: rgba(243, 243, 243, 1);
+  --hero-gradient: rgba(230, 230, 230, 0);
 }
 
 #hamburger-menu {
@@ -203,7 +207,7 @@ body {
   width: 100%;
   height: 30%;
   bottom: 0;
-  background: linear-gradient(0deg, rgba(24, 24, 24, 1) 8%, rgba(225, 225, 225, 0) 50%);
+  background: linear-gradient(0deg, var(--hero) 8%, var(--hero-gradient) 50%);
 }
 
 .hero .content {
